@@ -1,12 +1,15 @@
 package main
 
-import "log"
+import (
+	"log"
+	"github.com/mkalashnikau/golang_udemy/helpers"
+)
 
 const numPool = 10
 
 func CalculateValue(intChan chan int) {
 	randomNumber := 
-	intChan <- randomNumber
+	intChan <- helpers.RarandomNumber(numPool)
 }
 
 func main() {
