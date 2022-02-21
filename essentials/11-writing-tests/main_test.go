@@ -11,6 +11,7 @@ var tests = []struct {
 }{
 	{"valid-data", 100.0, 10.0, 10.0, false},
 	{"invalid-data", 100.0, 0.0, 0.0, true},
+	{"expect-5", 50.0, 10.0, 5.0, false},
 }
 
 func TestDivision(t *testing.T) {
@@ -27,11 +28,12 @@ func TestDivision(t *testing.T) {
 		}
 
 		if got != tt.expected {
-			t.Error("expected %f but got %f", tt.expected, got)
+			t.Errorf("expected %f but got %f", tt.expected, got)
 		}
 	}
 }
 
+// Also we can use functions or tests
 func TestDivide(t *testing.T) {
 	_, err := divide(10.0, 1.0)
 	if err != nil {
@@ -45,3 +47,7 @@ func TestBadDivide(t *testing.T) {
 		t.Error("Did not get an error when we should have")
 	}
 }
+
+// To test coverage: go test -cover
+
+// To get details in html format: go test -coverprofile=coverage.out && go tool cover -html=coverage.out
