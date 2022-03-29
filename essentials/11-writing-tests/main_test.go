@@ -2,6 +2,7 @@ package main
 
 import "testing"
 
+// The variable describe different conditions when we expect error or not
 var tests = []struct {
 	name     string
 	dividend float32
@@ -41,7 +42,7 @@ func TestDivide(t *testing.T) {
 	}
 }
 
-func TestBadDivide(t *testing.T) {
+func TestBadDivide(t *testing.T) { // testing.T - build-in package
 	_, err := divide(10.0, 0)
 	if err == nil {
 		t.Error("Did not get an error when we should have")

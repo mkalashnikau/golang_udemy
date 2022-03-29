@@ -33,6 +33,7 @@ func PrintInfo(a Animal) {
 	fmt.Println("This animal says", a.Says(), "and has", a.NumberOfLegs(), "legs")
 }
 
+// Dog needs to satisfy the interface requirements
 func (d *Dog) Says() string {
 	return "Woof"
 }
