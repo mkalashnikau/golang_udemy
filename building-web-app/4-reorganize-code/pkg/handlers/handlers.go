@@ -1,4 +1,4 @@
-package main
+package handlers
 
 import (
 	"net/http"
@@ -6,10 +6,10 @@ import (
 
 // Home is the home page handler
 func Home(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "home.page.tmpl")
+	RenderTemplate(w, "home.page.tmpl")
 }
 
 // About is the about page handler
 func About(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "about.page.tmpl")
+	RenderTemplate(w, "about.page.tmpl")
 }
